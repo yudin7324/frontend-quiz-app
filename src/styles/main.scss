@@ -17,7 +17,7 @@ html {
 
 body {
   color: $color-dark-navy;
-  background-color: $color-navy;
+  background-color: $color-light-grey;
   font-family: "Rubik", serif;
   font-size: 18px;
   line-height: 1.2;
@@ -89,7 +89,20 @@ h1, h2, h3, h4, h5, h6, p {
   padding: 0;
 }
 
+.container {
+
+  width: 100%;
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 24px;
+
+  @media (min-width: 768px) {
+    padding: 0 64px;
+  }
+}
+
 .main {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -98,6 +111,20 @@ h1, h2, h3, h4, h5, h6, p {
 
   @media (min-width: 991px) {
 
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: url('@/images/pattern-background-desktop-light.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 }
 

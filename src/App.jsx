@@ -1,9 +1,10 @@
-import './styles/_app.scss';
+import StartMenu from '@/pages/StartMenu/StartMenu';
+import '@/styles/_app.scss';
 
 function App() {
   return (
-    <main className="app heading-l">
-      quiz app
+    <main className="app">
+      <StartMenu />
     </main>
   );
 }
