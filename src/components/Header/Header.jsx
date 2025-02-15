@@ -1,18 +1,18 @@
 import PropTypes from 'prop-types';
-
 import './header.scss';
 
 function Header({ icon, title }) {
   return (
     <header className='header'>
-      <div className='header__title'>
+
+      {icon && title ? <div className='header__title'>
         <div className='header__icon'>
           {icon}
         </div>
         <div className='heading-s'>
           {title}
         </div>
-      </div>
+      </div> : <></>}
 
       <div className='header__switch'>
       switch
@@ -22,7 +22,7 @@ function Header({ icon, title }) {
 }
 
 Header.propTypes = {
-  icon: PropTypes.elementType.isRequired,
+  icon: PropTypes.element,
   title: PropTypes.string.isRequired
 }
 
