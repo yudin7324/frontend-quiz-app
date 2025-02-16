@@ -1,0 +1,21 @@
+.final-page {
+  
+  &__wrap {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 64px;
+
+    @media (min-width: 1280px) {
+      grid-template-columns: 465px 1fr;
+      gap: 131px;
+    }
+  }
+
+  &__title {
+    font-weight: 300;
+
+    span {
+      font-weight: 500;
+    }
+  }
+}

@@ -19,9 +19,9 @@ body {
   color: $color-dark-navy;
   background-color: $color-light-grey;
   font-family: "Rubik", serif;
-  font-size: 18px;
-  line-height: 1.2;
-  font-weight: 700;
+  font-size: 16px;
+  line-height: 1;
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-tap-highlight-color: transparent;
@@ -91,7 +91,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 .container {
   width: 100%;
-  max-width: 1160px;
+  max-width: 1288px;
   margin: 0 auto;
   padding: 0 24px;
 
@@ -147,32 +147,27 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .heading-m {
-  font-weight: 500;
   font-size: 36px;
   line-height: 1.2;
 }
 
 .heading-l {
-  font-weight: 300;
   font-size: 64px;
   line-height: 1;
 }
 
 .display {
-  font-weight: 500;
   font-size: 144px;
   line-height: 1;
 }
 
 .body-s {
   font-style: italic;
-  font-weight: 400;
   font-size: 20px;
   line-height: 1.5;
 }
 
 .body-m {
-  font-weight: 400;
   font-size: 24px;
   line-height: 150%;
 }

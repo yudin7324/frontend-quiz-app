@@ -1,14 +1,22 @@
+import { useNavigate } from "react-router-dom";
 import Header from "@/components/Header/Header"
 import IconAccessibility from '@/components/icons/IconAccessibility';
 import IconCss from '@/components/icons/IconCss';
 import IconHtml from '@/components/icons/IconHtml';
 import IconJs from '@/components/icons/IconJs';
-import SectionBtn from "@/components/SectionBtn/SectionBtn";
+import CategoryBtn from "@/components/CategoryBtn/CategoryBtn";
 import './startMenu.scss';
 
 
 
 function StartMenu() {
+
+  const navigate = useNavigate();
+
+  const handleCategorySelect = (category) => {
+    navigate("/questions", { state: { category } });
+  };
+
 
   const sectionBtns = [
     { icon: <IconHtml />, text: 'HTML', color: 'orange' },
@@ -20,7 +28,7 @@ function StartMenu() {
   return (
     <div className="start-menu">
       <div className="container">
-        <Header title="Accessibility"/>
+        <Header/>
 
         <div className="start-menu__wrap">
           <div className="start-menu__heading">
@@ -30,11 +38,12 @@ function StartMenu() {
 
           <div className="start-menu__btns">
             {sectionBtns.map((btn) =>
-              <SectionBtn 
+              <CategoryBtn
                 key={btn.text} 
                 icon={btn.icon} 
                 text={btn.text} 
                 color={btn.color}
+                onClick={() => handleCategorySelect(btn.text)}
               />
             )}
           </div>

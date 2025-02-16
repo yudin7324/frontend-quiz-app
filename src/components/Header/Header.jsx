@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import Switch from '@/components/Switch/Switch';
 import './header.scss';
 
 function Header({ icon, title }) {
@@ -15,7 +16,7 @@ function Header({ icon, title }) {
       </div> : <></>}
 
       <div className='header__switch'>
-      switch
+        <Switch />
       </div>
     </header>
   )
