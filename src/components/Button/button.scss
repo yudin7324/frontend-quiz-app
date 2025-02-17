@@ -1,0 +1,15 @@
+.button {
+  width: 100%;
+  font-weight: 500;
+  color: $color-white;
+  padding: 32px;
+  border-radius: 24px;
+  background-color: $color-purple;
+  box-shadow: 0 16px 40px 0 rgba(143, 160, 193, 0.14);
+  transition: all 0.3s ease-in-out;
+  margin-top: 32px;
+
+  &:hover {
+    background-color: rgba($color-purple, 0.5);
+  }
+}

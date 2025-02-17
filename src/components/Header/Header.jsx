@@ -2,19 +2,10 @@ import PropTypes from 'prop-types';
 import Switch from '@/components/Switch/Switch';
 import './header.scss';
 
-function Header({ icon, title }) {
+function Header({ category }) {
   return (
     <header className='header'>
-
-      {icon && title ? <div className='header__title'>
-        <div className='header__icon'>
-          {icon}
-        </div>
-        <div className='heading-s'>
-          {title}
-        </div>
-      </div> : <></>}
-
+      {category}
       <div className='header__switch'>
         <Switch />
       </div>
@@ -23,8 +14,7 @@ function Header({ icon, title }) {
 }
 
 Header.propTypes = {
-  icon: PropTypes.element,
-  title: PropTypes.string.isRequired
+  category: PropTypes.element,
 }
 
 export default Header

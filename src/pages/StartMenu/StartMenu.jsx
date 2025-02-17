@@ -7,8 +7,6 @@ import IconJs from '@/components/icons/IconJs';
 import CategoryBtn from "@/components/CategoryBtn/CategoryBtn";
 import './startMenu.scss';
 
-
-
 function StartMenu() {
 
   const navigate = useNavigate();

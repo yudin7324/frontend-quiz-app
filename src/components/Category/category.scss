@@ -1,0 +1,18 @@
+.category {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  
+  &__icon {
+    svg {
+      height: 56px;
+      width: 56px;
+    }
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+}
