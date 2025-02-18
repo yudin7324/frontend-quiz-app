@@ -1,5 +1,4 @@
-.question-btn {
-
+.option {
 
   &__wrap {
     display: flex;
@@ -17,7 +16,7 @@
     transition: border-color 0.3s ease-in-out; 
 
     &:hover {
-      .question-btn__variant {
+      .option__variant {
         color: $color-purple;
         background-color: #f6e7ff;
       }
@@ -26,7 +25,7 @@
     &.correct {
       border-color: $color-green;
 
-      .question-btn__variant {
+      .option__variant {
         color: $color-white;
         background-color: $color-green;
       }
@@ -35,7 +34,7 @@
     &.incorrect {
       border-color: $color-red;
 
-      .question-btn__variant {
+      .option__variant {
         color: $color-white;
         background-color: $color-red;
       }
@@ -43,11 +42,11 @@
   }
 
   &__input:checked {
-    ~ .question-btn {
+    ~ .option {
       &__wrap {
         border-color: $color-purple;
 
-        .question-btn__variant {
+        .option__variant {
           color: $color-white;
           background-color: $color-purple;
         }

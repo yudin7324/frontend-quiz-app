@@ -1,4 +1,4 @@
-.question-page {
+.quiz {
 
   &__wrap {
     display: grid;
@@ -17,6 +17,7 @@
 
   &__title {
     font-weight: 500;
+    margin-top: 27px;
   }
 
   &__btns {
