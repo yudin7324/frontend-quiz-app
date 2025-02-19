@@ -9,7 +9,9 @@
   transition: all 0.3s ease-in-out;
   margin-top: 32px;
 
-  &:hover {
-    background-color: rgba($color-purple, 0.5);
+  @media (hover: hover) {
+    &:hover {
+      background-color: rgba($color-purple, 0.5);
+    }
   }
 }

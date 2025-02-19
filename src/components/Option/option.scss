@@ -15,10 +15,12 @@
     border: 3px solid transparent;
     transition: border-color 0.3s ease-in-out; 
 
-    &:hover {
-      .option__variant {
-        color: $color-purple;
-        background-color: #f6e7ff;
+    @media (hover: hover) {
+      &:hover {
+        .option__variant {
+          color: $color-purple;
+          background-color: #f6e7ff;
+        }
       }
     }
 
@@ -50,6 +52,24 @@
           color: $color-white;
           background-color: $color-purple;
         }
+
+        &.correct {
+          border-color: $color-green;
+    
+          .option__variant {
+            color: $color-white;
+            background-color: $color-green;
+          }
+        }
+    
+        &.incorrect {
+          border-color: $color-red;
+    
+          .option__variant {
+            color: $color-white;
+            background-color: $color-red;
+          }
+        }
       }
     }
   }
@@ -68,6 +88,7 @@
     justify-content: center;
     height: 56px;
     width: 56px;
+    min-width: 56px;
     color: $color-grey-navy;
     font-weight: 700;
     background-color: $color-light-grey;

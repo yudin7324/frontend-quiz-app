@@ -3,7 +3,7 @@ import IconCorrect from '@/components/Icons/IconCorrect';
 import IconError from '@/components/Icons/IconError';
 import './option.scss';
 
-function Option({ text, onClick, index, isCorrect }) {
+function Option({ text, onClick, index, isCorrect, disabled }) {
 
   function setVariant(index) {
     switch (index) {
@@ -21,25 +21,24 @@ function Option({ text, onClick, index, isCorrect }) {
   return (
     <label 
       className="option heading-s" 
-      // htmlFor={variant}
+      htmlFor={index}
     >
       <input 
         className="option__input"   
         type="radio"
-        // id={variant}
-        // value={variant}
+        id={index}
+        value={text}
         name="option"
         onClick={onClick}
+        disabled={disabled}
       />
-      <div className={`option__wrap ${isCorrect !== null ? isCorrect ? 'correct' : 'incorrect' : ''}`}>
-      {/* <div className={`option__wrap`}> */}
+      <div className={`option__wrap ${isCorrect !== undefined ? (isCorrect ? 'correct' : 'incorrect') : ''}`}>
         <div className="option__variant">
-          {/* {variant} */}
           {setVariant(index)}
         </div>
         {text}
         <div className='option__icon'>
-          {isCorrect !== null ? (isCorrect ? <IconCorrect /> : <IconError />) : null}
+          {isCorrect !== undefined ? (isCorrect ? <IconCorrect /> : <IconError />) : null}
         </div>
       </div>
     </label>
@@ -47,11 +46,11 @@ function Option({ text, onClick, index, isCorrect }) {
 }
 
 Option.propTypes = {
-  // variant: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
   index: PropTypes.number.isRequired,
   isCorrect: PropTypes.bool,
+  disabled: PropTypes.bool,
 }
 
 export default Option;

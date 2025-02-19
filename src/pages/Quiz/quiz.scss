@@ -25,4 +25,13 @@
     flex-direction: column;
     gap: 24px;
   }
+
+  &__message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: $color-red;
+    margin-top: 32px;
+  }
 }

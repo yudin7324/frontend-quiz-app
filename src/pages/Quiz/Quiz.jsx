@@ -5,6 +5,7 @@ import IconAccessibility from '@/components/icons/IconAccessibility';
 import Option from '@/components/Option/Option';
 import Category from '@/components/Category/Category';
 import Button from '@/components/Button/Button';
+import IconError from '@/components/Icons/IconError';
 import './quiz.scss';
 
 function Quiz() {
@@ -14,7 +15,8 @@ function Quiz() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [showAnswer, setShowAnswer] = useState(false);
-  const [message, setMessage] = useState('');
+  const [isSelectMessage, setIsSelectMessage] = useState(false);
+  const [answerState, setAnswerState] = useState({});
 
   useEffect(() => {
     fetch("/data.json")
@@ -29,15 +31,21 @@ function Quiz() {
 
   const handleSubmit = () => {
     if (!selectedAnswer) {
-      setMessage('Please select an answer');
+      setIsSelectMessage(true);
       return;
     }
 
     const current = questions[currentQuestion];
-    const isCorrect = selectedAnswer === current.correctAnswer;
+    const isCorrect = selectedAnswer === current.answer;
 
+    setAnswerState(
+      isCorrect
+        ? { [selectedAnswer]: true }
+        : { [selectedAnswer]: false, [current.answer]: true }
+    );
+
+    setIsSelectMessage(false);
     setShowAnswer(true);
-    setMessage(isCorrect ? 'Correct!' : `Incorrect. The correct answer was: ${current.correctAnswer}`);
   };
 
   const handleNext = () => {
@@ -45,7 +53,7 @@ function Quiz() {
       setCurrentQuestion(currentQuestion + 1);
       setSelectedAnswer(null);
       setShowAnswer(false);
-      setMessage('');
+      setAnswerState({});
     } else {
       navigate("/result");
     }
@@ -74,23 +82,22 @@ function Quiz() {
                   text={option}
                   index={index}
                   onClick={() => {
-                    setSelectedAnswer(option);
-                    setShowAnswer(false);
+                    if (!showAnswer) {
+                      setSelectedAnswer(option);
+                      setShowAnswer(false);
+                    }
                   }}
-                  isCorrect={null}
+                  isCorrect={answerState[option]}
+                  disabled={showAnswer}
                 />
               ))}
             </div>
-
-            {message && <div className="quiz__message">{message}</div>}
-            
             <Button 
               text={showAnswer ? "Next Question" : "Submit Answer"} 
               onClick={showAnswer ? handleNext : handleSubmit} 
-              disabled={!selectedAnswer && !showAnswer} 
             />
+            {isSelectMessage && <div className="quiz__message body-m"><IconError />Please select an answer</div>}
           </div>
-
         </div>
       </div>
     </div>
