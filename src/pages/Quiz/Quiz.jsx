@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import Header from '@/components/Header/Header'
-import IconAccessibility from '@/components/icons/IconAccessibility';
+import Header from '@/components/Header/Header';
 import Option from '@/components/Option/Option';
 import Category from '@/components/Category/Category';
 import Button from '@/components/Button/Button';
@@ -12,22 +11,58 @@ function Quiz() {
   const { category } = useParams(); 
   const navigate = useNavigate();
   const [questions, setQuestions] = useState([]);
-  const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [quizIcon, setQuizIcon] = useState(() => {
+    return parseInt(localStorage.getItem('quizIcon')) || '';
+  });
+  const [categoryName, setCategoryName] = useState(() => {
+    return parseInt(localStorage.getItem('categoryName')) || '';
+  });
+  const [currentQuestion, setCurrentQuestion] = useState(() => {
+    return parseInt(localStorage.getItem('currentQuestion')) || 0;
+  });
   const [selectedAnswer, setSelectedAnswer] = useState(null);
-  const [showAnswer, setShowAnswer] = useState(false);
+  const [showAnswer, setShowAnswer] = useState(() => {
+    return JSON.parse(localStorage.getItem('showAnswer')) || false;
+  });
   const [isSelectMessage, setIsSelectMessage] = useState(false);
-  const [answerState, setAnswerState] = useState({});
+  const [answerState, setAnswerState] = useState(() => {
+    return JSON.parse(localStorage.getItem('answerState')) || {};
+  });
+  const [correctAnswers, setCorrectAnswers] = useState(() => {
+    return parseInt(localStorage.getItem('correctAnswers')) || 0;
+  });
 
   useEffect(() => {
-    fetch("/data.json")
+    fetch('/data.json')
       .then((res) => res.json())
       .then((data) => {
-        const selectedQuiz = data.quizzes.find(q => q.title.toLowerCase() === category.toLowerCase());
+        const selectedQuiz = data.quizzes.find((quiz) => {
+          return quiz.title.toLowerCase() === category.toLowerCase()
+        });
+
         if (selectedQuiz) {
           setQuestions(selectedQuiz.questions);
+          setQuizIcon(selectedQuiz.icon);
+          setCategoryName(selectedQuiz.title);
         }
       });
   }, [category]);
+
+  useEffect(() => {
+    localStorage.setItem('currentQuestion', currentQuestion);
+    localStorage.setItem('showAnswer', JSON.stringify(showAnswer));
+    localStorage.setItem('answerState', JSON.stringify(answerState));
+    localStorage.setItem('correctAnswers', correctAnswers);
+    localStorage.setItem('quizIcon', quizIcon);
+    localStorage.setItem('categoryName', categoryName);
+  },[
+    currentQuestion, 
+    showAnswer, 
+    answerState, 
+    correctAnswers, 
+    quizIcon, 
+    categoryName
+  ]);
 
   const handleSubmit = () => {
     if (!selectedAnswer) {
@@ -37,6 +72,10 @@ function Quiz() {
 
     const current = questions[currentQuestion];
     const isCorrect = selectedAnswer === current.answer;
+
+    if (isCorrect) {
+      setCorrectAnswers(prev => prev + 1);
+    }
 
     setAnswerState(
       isCorrect
@@ -55,7 +94,8 @@ function Quiz() {
       setShowAnswer(false);
       setAnswerState({});
     } else {
-      navigate("/result");
+      localStorage.setItem('finalScore', correctAnswers);
+      navigate('/result');
     }
   };
 
@@ -65,17 +105,17 @@ function Quiz() {
 
   return (
     <div className='quiz'>
-      <div className="container">
-        <Header category={<Category icon={<IconAccessibility />} text="Accessibility" />} />
+      <div className='container'>
+        <Header category={<Category icon={quizIcon} text={categoryName} />} />
 
-        <div className="quiz__wrap">
-          <div className="quiz__heading">
-            <p className="quiz__text body-s">Question {currentQuestion + 1} of 10</p>
-            <h1 className="quiz__title heading-m">{question.question}</h1>
+        <div className='quiz__wrap'>
+          <div className='quiz__heading'>
+            <p className='quiz__text body-s'>Question {currentQuestion + 1} of {questions.length}</p>
+            <h1 className='quiz__title heading-m'>{question.question}</h1>
           </div>
 
           <div>
-            <div className="quiz__btns">
+            <div className='quiz__btns'>
               {question.options.map((option, index) => (
                 <Option
                   key={option}
@@ -93,10 +133,10 @@ function Quiz() {
               ))}
             </div>
             <Button 
-              text={showAnswer ? "Next Question" : "Submit Answer"} 
+              text={showAnswer ? 'Next Question' : 'Submit Answer'} 
               onClick={showAnswer ? handleNext : handleSubmit} 
             />
-            {isSelectMessage && <div className="quiz__message body-m"><IconError />Please select an answer</div>}
+            {isSelectMessage && <div className='quiz__message body-m'><IconError />Please select an answer</div>}
           </div>
         </div>
       </div>

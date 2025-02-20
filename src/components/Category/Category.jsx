@@ -5,7 +5,7 @@ function Category({ text, icon }) {
   return (
     <div className="category">
       <div className='category__icon'>
-        {icon}
+        <img src={`.${icon}`} alt="header category" />
       </div>
       <div className='category__text heading-s'> 
         {text}
@@ -15,7 +15,7 @@ function Category({ text, icon }) {
 }
 
 Category.propTypes = {
-  icon: PropTypes.element.isRequired,
+  icon: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
 }
 
