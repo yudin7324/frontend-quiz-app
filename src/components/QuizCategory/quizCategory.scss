@@ -12,21 +12,9 @@
   border: 3px solid transparent;
   transition: all 0.3s ease-in-out;
 
-  &:hover {
-    &.orange {
-      border-color: $color-orange;
-    }
-  
-    &.blue {
-      border-color: $color-blue;
-    }
-  
-    &.green {
-      border-color: $color-green;
-    }
-  
-    &.purple {
-      border-color: $color-purple;
-    }
+  .dark & {
+    background-color: $color-navy;
+    color: $color-white;
+    box-shadow: 0 16px 40px 0 rgba(49, 62, 81, 0.14);
   }
 }

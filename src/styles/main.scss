@@ -26,6 +26,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-tap-highlight-color: transparent;
   overflow: hidden;
+  transition: all 0.3s ease-in-out;
+
+  .dark & {
+    background-color: $color-dark-navy;
+    color: $color-white;
+  }
 }
 
 a {
@@ -121,6 +127,14 @@ h1, h2, h3, h4, h5, h6, p {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    transition: background 0.3s ease-in-out;
+
+    .dark & {
+      background: url('@/images/pattern-background-mobile-dark.svg');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
 
     @media (min-width: 768px) {
       width: 60%;
@@ -129,6 +143,13 @@ h1, h2, h3, h4, h5, h6, p {
       background-position: left top;
       background-repeat: no-repeat;
       background-size: contain;
+
+      .dark & {
+        background: url('@/images/pattern-background-tablet-dark.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
     }
 
     @media (min-width: 1440px) {
@@ -138,6 +159,13 @@ h1, h2, h3, h4, h5, h6, p {
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
+
+      .dark & {
+        background: url('@/images/pattern-background-desktop-dark.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
     }
   }
 }

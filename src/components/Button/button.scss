@@ -9,6 +9,10 @@
   transition: all 0.3s ease-in-out;
   margin-top: 32px;
 
+  .dark & {
+    box-shadow: 0 16px 40px 0 rgba(49, 62, 81, 0.14);
+  }
+
   @media (hover: hover) {
     &:hover {
       background-color: rgba($color-purple, 0.5);

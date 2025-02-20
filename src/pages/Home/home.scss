@@ -13,6 +13,11 @@
 
   &__text {
     margin-top: 16px;
+    transition: color 0.3s ease-in-out;
+
+    .dark & {
+      color: $color-light-bluish;
+    }
 
     @media (min-width: 768px) {
       margin-top: 48px;

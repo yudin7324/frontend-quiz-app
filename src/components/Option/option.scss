@@ -13,7 +13,13 @@
     box-shadow: 0 16px 40px 0 rgba(143, 160, 193, 0.14);
     cursor: pointer;
     border: 3px solid transparent;
-    transition: border-color 0.3s ease-in-out; 
+    transition: all 0.3s ease-in-out; 
+
+    .dark & {
+      background-color: $color-navy;
+      color: $color-white;
+      box-shadow: 0 16px 40px 0 rgba(49, 62, 81, 0.14);
+    }
 
     @media (hover: hover) {
       &:hover {

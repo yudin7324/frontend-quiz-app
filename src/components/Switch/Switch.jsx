@@ -1,26 +1,13 @@
-import { useState, useEffect } from 'react';
 import IconMoon from '@/components/icons/IconMoon';
 import IconSun from '@/components/icons/IconSun';
+import { useTheme } from '@/components/ThemeProvider/ThemeProvider';
 import './switch.scss';
 
 function Switch() {
-  const [darkMode, setDarkMode] = useState(
-    typeof window !== "undefined" && window.matchMedia("(prefers-color-scheme: light)").matches
-  );
-
-  useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  }, [darkMode]);
+  const { darkMode, toggleTheme } = useTheme();
 
   return (
-    <button
-      onClick={() => setDarkMode(!darkMode)}
-      className={`switch ${darkMode ? "dark" : "light"}`}
-    >
+    <button onClick={toggleTheme} className={`switch ${darkMode ? "dark" : "light"}`}>
       <div className="switch__icon">
         <IconMoon />
       </div>
