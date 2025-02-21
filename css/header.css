@@ -1,0 +1,15 @@
+.header {
+  display: flex;
+  align-items: center;
+  padding-top: 40px;
+  margin-bottom: 49px;
+}
+@media (min-width: 1280px) {
+  .header {
+    padding-top: 83px;
+    margin-bottom: 85px;
+  }
+}
+.header__switch {
+  margin-left: auto;
+}
