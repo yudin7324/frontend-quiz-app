@@ -1,5 +1,5 @@
-import IconMoon from '@/components/icons/IconMoon';
-import IconSun from '@/components/icons/IconSun';
+import IconMoon from '@/components/Icons/IconMoon';
+import IconSun from '@/components/Icons/IconSun';
 import { useTheme } from '@/theme/useTheme';
 import './switch.scss';
 
