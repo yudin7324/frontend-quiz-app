@@ -18,6 +18,13 @@ function Option({ text, onClick, index, isCorrect, disabled }) {
     }
   }
 
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter') {
+      onClick();
+      document.getElementById('submit-button')?.focus();
+    }
+  };
+
   return (
     <label 
       className="option heading-s" 
@@ -31,6 +38,7 @@ function Option({ text, onClick, index, isCorrect, disabled }) {
         name="option"
         onClick={onClick}
         disabled={disabled}
+        onKeyDown={handleKeyDown}
       />
       <div className={`option__wrap ${isCorrect !== undefined ? (isCorrect ? 'correct' : 'incorrect') : ''}`}>
         <div className="option__variant">

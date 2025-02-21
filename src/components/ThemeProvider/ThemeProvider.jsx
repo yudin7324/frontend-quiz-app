@@ -1,22 +1,20 @@
-import { createContext, useState, useEffect, useContext } from 'react';
+import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-
-const ThemeContext = createContext();
+import ThemeContext from '@/theme/themeContext';
 
 function ThemeProvider({ children }) {
   const [darkMode, setDarkMode] = useState(() => {
-    const savedTheme = localStorage.getItem("theme");
-    return savedTheme ? savedTheme === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const savedTheme = localStorage.getItem('theme');
+    return savedTheme ? savedTheme === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
   });
 
   useEffect(() => {
     if (darkMode) {
-      document.documentElement.classList.add("dark");
+      document.documentElement.classList.add('dark');
     } else {
-      document.documentElement.classList.remove("dark");
+      document.documentElement.classList.remove('dark');
     }
-
-    localStorage.setItem("theme", darkMode ? "dark" : "light");
+    localStorage.setItem('theme', darkMode ? 'dark' : 'light');
   }, [darkMode]);
 
   const toggleTheme = () => setDarkMode(prev => !prev);
@@ -33,5 +31,3 @@ ThemeProvider.propTypes = {
 };
 
 export default ThemeProvider;
-
-export const useTheme = () => useContext(ThemeContext);

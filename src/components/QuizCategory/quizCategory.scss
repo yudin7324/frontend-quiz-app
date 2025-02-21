@@ -17,4 +17,12 @@
     color: $color-white;
     box-shadow: 0 16px 40px 0 rgba(49, 62, 81, 0.14);
   }
+
+  &:hover {
+    border-color: $color-purple;
+  }
+
+  &:focus {
+    outline: 2px solid $color-white;
+  }
 }

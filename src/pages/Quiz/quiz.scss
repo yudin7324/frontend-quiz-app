@@ -3,11 +3,11 @@
   &__wrap {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 64px;
 
     @media (min-width: 1280px) {
       grid-template-columns: 465px 1fr;
-      gap: 131px;
+      column-gap: 131px;
+      row-gap: 0;
     }
   }
 
@@ -29,6 +29,13 @@
     display: flex;
     flex-direction: column;
     gap: 24px;
+    order: 3;
+    margin-top: 64px;
+
+    @media (min-width: 1280px) {
+      order: unset;
+      margin-top: 0;
+    }
   }
 
   &__message {
@@ -42,6 +49,14 @@
 
     .dark & {
       color: $color-white;
+    }
+  }
+
+  &__submit {
+    order: 4;
+
+    @media (min-width: 1280px) {
+      order: unset;
     }
   }
 }

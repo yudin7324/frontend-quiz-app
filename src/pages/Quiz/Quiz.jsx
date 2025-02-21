@@ -4,6 +4,7 @@ import Header from '@/components/Header/Header';
 import Option from '@/components/Option/Option';
 import Category from '@/components/Category/Category';
 import Button from '@/components/Button/Button';
+import Slider from '@/components/Slider/Slider';
 import IconError from '@/components/Icons/IconError';
 import './quiz.scss';
 
@@ -113,25 +114,25 @@ function Quiz() {
             <p className='quiz__text body-s'>Question {currentQuestion + 1} of {questions.length}</p>
             <h1 className='quiz__title heading-m'>{question.question}</h1>
           </div>
-
-          <div>
-            <div className='quiz__btns'>
-              {question.options.map((option, index) => (
-                <Option
-                  key={option}
-                  text={option}
-                  index={index}
-                  onClick={() => {
-                    if (!showAnswer) {
-                      setSelectedAnswer(option);
-                      setShowAnswer(false);
-                    }
-                  }}
-                  isCorrect={answerState[option]}
-                  disabled={showAnswer}
-                />
-              ))}
-            </div>
+          <div className='quiz__btns'>
+            {question.options.map((option, index) => (
+              <Option
+                key={option}
+                text={option}
+                index={index}
+                onClick={() => {
+                  if (!showAnswer) {
+                    setSelectedAnswer(option);
+                    setShowAnswer(false);
+                  }
+                }}
+                isCorrect={answerState[option]}
+                disabled={showAnswer}
+              />
+            ))}
+          </div>
+          <Slider value={currentQuestion + 1} length={questions.length} />
+          <div className='quiz__submit'>
             <Button 
               text={showAnswer ? 'Next Question' : 'Submit Answer'} 
               onClick={showAnswer ? handleNext : handleSubmit} 

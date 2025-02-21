@@ -13,6 +13,10 @@
     box-shadow: 0 16px 40px 0 rgba(49, 62, 81, 0.14);
   }
 
+  &:focus {
+    outline: 2px solid $color-white;
+  }
+
   @media (hover: hover) {
     &:hover {
       background-color: rgba($color-purple, 0.5);

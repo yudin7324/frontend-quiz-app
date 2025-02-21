@@ -1,13 +1,13 @@
 import IconMoon from '@/components/icons/IconMoon';
 import IconSun from '@/components/icons/IconSun';
-import { useTheme } from '@/components/ThemeProvider/ThemeProvider';
+import { useTheme } from '@/theme/useTheme';
 import './switch.scss';
 
 function Switch() {
   const { darkMode, toggleTheme } = useTheme();
 
   return (
-    <button onClick={toggleTheme} className={`switch ${darkMode ? "dark" : "light"}`}>
+    <button onClick={toggleTheme} className={`switch ${darkMode ? "dark" : "light"}`} tabIndex={0}>
       <div className="switch__icon">
         <IconMoon />
       </div>

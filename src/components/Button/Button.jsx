@@ -8,6 +8,7 @@ function Button({ text, onClick }) {
       type='button' 
       aria-label='button'
       onClick={onClick}
+      id="submit-button"
     >
       {text}
     </button>
