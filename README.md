@@ -3,20 +3,20 @@
 ![Design preview for the Frontend quiz app coding challenge](./preview.jpg)
 
 ## Overview
-This is a password generator application built with React as part of a **Frontend Mentor** challenge. The app allows users to generate secure passwords based on selected criteria and copy them to the clipboard.
+This is a Frontend Quiz App built with React as part of a Frontend Mentor challenge. The app allows users to test their knowledge on various frontend-related topics by answering multiple-choice questions. It provides real-time feedback, tracks scores, and ensures a fully accessible experience with keyboard navigation and theme switching.
 
 ## Features
-- Select a quiz subject
-- Select a single answer from each question from a choice of four
-- See an error message when trying to submit an answer without making a selection
-- See if they have made a correct or incorrect choice when they submit an answer
-- Move on to the next question after seeing the question result
-- See a completed state with the score after the final question
-- Play again to choose another subject
-- View the optimal layout for the interface depending on their device's screen size
-- See hover and focus states for all interactive elements on the page
-- Navigate the entire app only using their keyboard
-- **Bonus**: Change the app's theme between light and dark
+-	Users can select a quiz subject from the available options.
+- They can choose a single answer for each question from four possible choices.
+- If they attempt to submit an answer without selecting one, an error message is displayed.
+- Upon submission, they receive immediate feedback indicating whether their choice was correct or incorrect.
+- After viewing the result of a question, they can proceed to the next one.
+- Upon completing the quiz, they see their final score and a summary of their performance.
+- Users can restart the quiz and choose another subject to play again.
+- The interface is fully responsive, ensuring an optimal layout on any device.
+- Hover and focus states are implemented for all interactive elements, enhancing accessibility.
+- The entire app can be navigated using only the keyboard, allowing for seamless interaction.
+-	Bonus: Users can switch between light and dark themes for a personalized experience.
 
 ## Tech Stack
 - React
@@ -41,4 +41,4 @@ npm run build
 ```
 
 ## License
-This project is part of a Frontend Mentor challenge and is intended for educational purposes.
+This project is part of a [Frontend Mentor](https://www.frontendmentor.io) challenge and is intended for educational purposes.
