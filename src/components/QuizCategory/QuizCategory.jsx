@@ -6,8 +6,6 @@ function QuizCategory({ text, icon, path }) {
   return (
     <Link
       className={`quiz-category heading-s`} 
-      type='btn' 
-      aria-label='category btn'
       to={path}
     >
       <img src={icon} alt="icon" />
