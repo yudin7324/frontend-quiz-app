@@ -13,7 +13,6 @@
 
   &__text {
     color: $color-grey-navy;
-    transition: color 0.3s ease-in-out;
 
     .dark & {
       color: $color-light-bluish;
@@ -45,8 +44,7 @@
     gap: 8px;
     color: $color-red;
     margin-top: 32px;
-    transition: color 0.3s ease-in-out;
-
+    
     .dark & {
       color: $color-white;
     }

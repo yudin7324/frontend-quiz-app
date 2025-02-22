@@ -10,7 +10,7 @@ function Slider({ value, length }) {
       max={length}
       step="1"
       value={value}
-      style={{'--slider-progress': `${(value / length) * 100}%`,}}
+      style={{'--slider-progress': `${(value / length - 4) * 100}%`,}}
       aria-label="slider-range"
       tabIndex={-1}
     />

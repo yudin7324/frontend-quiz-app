@@ -1,6 +1,6 @@
 import IconMoon from '@/components/Icons/IconMoon';
 import IconSun from '@/components/Icons/IconSun';
-import { useTheme } from '@/theme/useTheme';
+import { useTheme } from '@/hooks/useTheme';
 import './switch.scss';
 
 function Switch() {

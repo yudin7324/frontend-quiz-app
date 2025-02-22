@@ -13,7 +13,6 @@
 
   &__text {
     margin-top: 16px;
-    transition: color 0.3s ease-in-out;
 
     .dark & {
       color: $color-light-bluish;

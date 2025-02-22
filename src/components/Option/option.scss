@@ -49,7 +49,7 @@
     }
   }
 
-  &__input:focus {
+  &__input:focus-visible {
     ~ .option {
       &__wrap {
         outline: 2px solid $color-white;
