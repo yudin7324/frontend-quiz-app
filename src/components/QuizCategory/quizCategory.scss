@@ -5,24 +5,18 @@
   gap: 32px;
   font-weight: 500;
   padding: 17px;
-  background-color: $color-white;
+  background-color: var(--color-second-bg);
+  color: var(--color-text);
   border-radius: 24px;
-  box-shadow: 0 16px 40px 0 rgba(143, 160, 193, 0.14);
+  box-shadow: var(--box-shadow);
   cursor: pointer;
   border: 3px solid transparent;
-  transition: all 0.3s ease-in-out;
-
-  .dark & {
-    background-color: $color-navy;
-    color: $color-white;
-    box-shadow: 0 16px 40px 0 rgba(49, 62, 81, 0.14);
-  }
 
   &:hover {
-    border-color: $color-purple;
+    border-color: var(--color-purple);
   }
 
   &:focus-visible {
-    outline: 2px solid $color-white;
+    outline: 2px solid var(--color-outline);
   }
 }

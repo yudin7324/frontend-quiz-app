@@ -25,13 +25,8 @@
     align-items: center;
     padding: 48px;
     border-radius: 24px;
-    background-color: $color-white;
-    box-shadow: 0 16px 40px 0 rgba(143, 160, 193, 0.14);
-
-    .dark & {
-      background-color: $color-navy;
-      box-shadow: 0 16px 40px 0 rgba(49, 62, 81, 0.14);
-    }
+    background-color: var(--color-second-bg);
+    box-shadow: var(--box-shadow);
   }
 
   &__count {
@@ -40,11 +35,7 @@
   }
 
   &__count-all {
-    color: $color-grey-navy;
+    color: var(--color-second-text);
     margin-top: 16px;
-
-    .dark & {
-      color: $color-light-bluish;
-    }
   }
 }

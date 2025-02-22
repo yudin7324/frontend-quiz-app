@@ -4,13 +4,13 @@ import './button.scss';
 function Button({ text, onClick }) {
   return (
     <button
-      className='button heading-s' 
+      className='button' 
       type='button' 
       aria-label='button'
       onClick={onClick}
       id="submit-button"
     >
-      {text}
+      <span className='heading-s'>{text}</span>
     </button>
   )
 }

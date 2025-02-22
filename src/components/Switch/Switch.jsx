@@ -11,7 +11,7 @@ function Switch() {
       onClick={toggleTheme} 
       className={`switch ${darkMode ? "dark" : "light"}`} 
       tabIndex={0}
-      aria-label='switch color button'
+      aria-label='switch theme button'
     >
       <span className="switch__icon">
         <IconSun />

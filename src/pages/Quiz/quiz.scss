@@ -12,11 +12,7 @@
   }
 
   &__text {
-    color: $color-grey-navy;
-
-    .dark & {
-      color: $color-light-bluish;
-    }
+    color: var(--color-second-text);
   }
 
   &__title {
@@ -42,12 +38,8 @@
     align-items: center;
     justify-content: center;
     gap: 8px;
-    color: $color-red;
+    color: var(--color-error-message);
     margin-top: 32px;
-    
-    .dark & {
-      color: $color-white;
-    }
   }
 
   &__submit {

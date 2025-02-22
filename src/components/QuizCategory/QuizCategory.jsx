@@ -5,7 +5,7 @@ import './quizCategory.scss';
 function QuizCategory({ text, icon, path }) {
   return (
     <Link
-      className={`quiz-category heading-s`} 
+      className={`quiz-category heading-s`}
       to={path}
     >
       <img src={icon} alt="icon" />

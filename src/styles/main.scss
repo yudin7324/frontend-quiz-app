@@ -1,5 +1,63 @@
 @use "fonts.scss";
 
+:root {
+  --color-white: #FFFFFF;
+  --color-purple: #A729F5;
+  --color-navy: #3B4D66;
+  --color-dark-navy: #313E51;
+  --color-grey-navy: #626C7F;
+  --color-light-bluish: #ABC1E1;
+  --color-light-grey: #F4F6FA;
+  --color-green: #26D782;
+  --color-red: #EE5454;
+  --color-blue: #306AFF;
+  --color-orange: #FF7E35;
+}
+
+.dark {
+  --color-bg: var(--color-dark-navy);
+  --color-second-bg: var(--color-navy);
+  --color-text: var(--color-white);
+  --color-second-text: var(--color-light-bluish);
+  --box-shadow: 0px 16px 40px 0px rgba(49, 62, 81, 0.14);
+  --color-error-message: var(--color-white);
+  --color-outline: var(--color-white);
+
+  .main {
+    --bg-image: url('@/images/pattern-background-mobile-dark.svg');
+
+    @media (min-width: 768px) {
+      --bg-image: url('@/images/pattern-background-tablet-dark.svg');
+    }
+  
+    @media (min-width: 1440px) {
+      --bg-image: url('@/images/pattern-background-desktop-dark.svg');
+    }
+  }
+}
+
+.light {
+  --color-bg: var(--color-light-grey);
+  --color-second-bg: var(--color-white);
+  --color-text: var(--color-dark-navy);
+  --color-second-text: var(--color-grey-navy);
+  --box-shadow: 0px 16px 40px 0px rgba(143, 160, 193, 0.14);
+  --color-error-message: var(--color-red);
+  --color-outline: var(--color-dark-navy);
+
+  .main {
+    --bg-image: url('@/images/pattern-background-mobile-light.svg');
+
+    @media (min-width: 768px) {
+      --bg-image: url('@/images/pattern-background-tablet-light.svg');
+    }
+  
+    @media (min-width: 1440px) {
+      --bg-image: url('@/images/pattern-background-desktop-light.svg');
+    }
+  }
+}
+
 *,
 *::before,
 *::after {
@@ -105,44 +163,37 @@ h1, h2, h3, h4, h5, h6, p {
   align-items: center;
   height: 100%;
   min-height: 100vh;
-  color: $color-dark-navy;
-  background-color: $color-light-grey;
-  background-image: url('@/images/pattern-background-mobile-light.svg');
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  background-image: var(--bg-image);
   background-position: left top;
   background-repeat: no-repeat;
   background-size: contain;
 
   @media (min-width: 768px) {
-    background-image: url('@/images/pattern-background-tablet-light.svg');
     background-position: left top;
     background-repeat: no-repeat;
     background-size: 50%;
   }
 
   @media (min-width: 1440px) {
-    background-image: url('@/images/pattern-background-desktop-light.svg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
   }
 
   .dark & {
-    color: $color-white;
-    background-color: $color-dark-navy;
-    background-image: url('@/images/pattern-background-mobile-dark.svg');
     background-position: left top;
     background-repeat: no-repeat;
     background-size: contain;
 
     @media (min-width: 768px) {
-      background-image: url('@/images/pattern-background-tablet-dark.svg');
       background-position: left top;
       background-repeat: no-repeat;
       background-size: 50%;
     }
 
     @media (min-width: 1440px) {
-      background-image: url('@/images/pattern-background-desktop-dark.svg');
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
