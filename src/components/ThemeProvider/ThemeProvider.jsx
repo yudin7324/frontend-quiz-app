@@ -5,7 +5,7 @@ import ThemeContext from '@/theme/themeContext';
 function ThemeProvider({ children }) {
   const [darkMode, setDarkMode] = useState(() => {
     const savedTheme = localStorage.getItem('theme');
-    return savedTheme ? savedTheme === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+    return savedTheme ? savedTheme === 'dark' : true;
   });
 
   useEffect(() => {
