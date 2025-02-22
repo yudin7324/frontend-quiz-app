@@ -18,7 +18,7 @@ function StartMenu() {
         <Header/>
         <div className="home__wrap">
           <div className="home__heading">
-            <h1 className="home__title heading-l">Welcome to the <b>Frontend Quiz!</b></h1>
+            <h1 className="home__title heading-l">Welcome to the <span>Frontend Quiz!</span></h1>
             <p className="home__text body-s">Pick a subject to get started.</p>
           </div>
           <div className="home__btns">

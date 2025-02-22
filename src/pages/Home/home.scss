@@ -11,6 +11,14 @@
     }
   }
 
+  &__title {
+    font-weight: 300;
+
+    span {
+      font-weight: 500;
+    }
+  }
+
   &__text {
     margin-top: 16px;
 

@@ -9,13 +9,13 @@ function Switch() {
   return (
     <button onClick={toggleTheme} className={`switch ${darkMode ? "dark" : "light"}`} tabIndex={0}>
       <div className="switch__icon">
-        <IconMoon />
+        <IconSun />
       </div>
       <div className='switch__wrap'>
         <div className="switch__toggle" />
       </div>
       <div className="switch__icon">
-        <IconSun />
+      <IconMoon />
       </div>
     </button>
   )
