@@ -14,23 +14,21 @@ function StartMenu() {
 
   return (
     <div className="home">
-      <div className="container">
-        <Header/>
-        <div className="home__wrap">
-          <div className="home__heading">
-            <h1 className="home__title heading-l">Welcome to the <span>Frontend Quiz!</span></h1>
-            <p className="home__text body-s">Pick a subject to get started.</p>
-          </div>
-          <div className="home__btns">
-            {quizzes.map((quiz) =>
-              <QuizCategory
-                key={quiz.title} 
-                icon={quiz.icon} 
-                text={quiz.title} 
-                path={`/quiz/${quiz.title.toLowerCase()}`}
-              />
-            )}
-          </div>
+      <Header/>
+      <div className="home__wrap">
+        <div className="home__heading">
+          <h1 className="home__title heading-l">Welcome to the <span>Frontend Quiz!</span></h1>
+          <p className="home__text body-s">Pick a subject to get started.</p>
+        </div>
+        <div className="home__btns">
+          {quizzes.map((quiz) =>
+            <QuizCategory
+              key={quiz.title} 
+              icon={quiz.icon} 
+              text={quiz.title} 
+              path={`/quiz/${quiz.title.toLowerCase()}`}
+            />
+          )}
         </div>
       </div>
     </div>

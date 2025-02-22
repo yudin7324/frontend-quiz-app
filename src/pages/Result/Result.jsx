@@ -10,24 +10,20 @@ function Result() {
 
   return (
     <div className='result'>
-      <div className='container'> 
-        <Header category={<Category icon={quizIcon} text={categoryName} />} />
-
-        <div className='result__wrap'>
-          <div className='result__heading'>
-            <h1 className='result__title heading-l'>
-              Quiz completed <span>You scored...</span>
-            </h1>
+      <Header category={<Category icon={quizIcon} text={categoryName} />} />
+      <div className='result__wrap'>
+        <div className='result__heading'>
+          <h1 className='result__title heading-l'>
+            Quiz completed <span>You scored...</span>
+          </h1>
+        </div>
+        <div>
+          <div className='result__result'>
+            <Category icon={quizIcon} text={categoryName} />
+            <div className='result__count display'>{score}</div>
+            <div className='result__count-all body-m'>out of {totalQuestions}</div>
           </div>
-
-          <div>
-            <div className='result__result'>
-              <Category icon={quizIcon} text={categoryName} />
-              <div className='result__count display'>{score}</div>
-              <div className='result__count-all body-m'>out of {totalQuestions}</div>
-            </div>
-            <Button text='Play Again' onClick={handlePlayAgain} />
-          </div>
+          <Button text='Play Again' onClick={handlePlayAgain} />
         </div>
       </div>
     </div>

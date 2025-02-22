@@ -6,13 +6,15 @@ import Result from '@/pages/Result/Result';
 function App() {
   return (
     <main className="app">
-      <Router>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/quiz/:category" element={<Quiz />} />
-          <Route path="/result" element={<Result />} />
-        </Routes>
-      </Router>
+      <div className="container">
+        <Router>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/quiz/:category" element={<Quiz />} />
+            <Route path="/result" element={<Result />} />
+          </Routes>
+        </Router>
+      </div>
     </main>
   );
 }
