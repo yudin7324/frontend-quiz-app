@@ -2,8 +2,6 @@
 
 ![Design preview for the Frontend quiz app coding challenge](./preview.jpg)
 
-# [Live demo site](https://iridescent-elf-391620.netlify.app/)
-
 ## Overview
 This is a Frontend Quiz App built with React as part of a Frontend Mentor challenge. The app allows users to test their knowledge on various frontend-related topics by answering multiple-choice questions. It provides real-time feedback, tracks scores, and ensures a fully accessible experience with keyboard navigation and theme switching.
 
