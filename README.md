@@ -1,9 +1,6 @@
 # Frontend quiz app
 
-![Design preview for the Frontend quiz app coding challenge](./preview.jpg)
-
-## Overview
-This is a Frontend Quiz App built with React as part of a Frontend Mentor challenge. The app allows users to test their knowledge on various frontend-related topics by answering multiple-choice questions. It provides real-time feedback, tracks scores, and ensures a fully accessible experience with keyboard navigation and theme switching.
+![Design preview for the Frontend quiz app coding challenge](./preview.png)
 
 ## Features
 -	Users can select a quiz subject from the available options.
@@ -39,6 +36,3 @@ To create an optimized production build, run:
 ```sh
 npm run build
 ```
-
-## License
-This project is part of a [Frontend Mentor](https://www.frontendmentor.io) challenge and is intended for educational purposes.
