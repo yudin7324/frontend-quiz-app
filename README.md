@@ -13,7 +13,7 @@
 - The interface is fully responsive, ensuring an optimal layout on any device.
 - Hover and focus states are implemented for all interactive elements, enhancing accessibility.
 - The entire app can be navigated using only the keyboard, allowing for seamless interaction.
--	Bonus: Users can switch between light and dark themes for a personalized experience.
+-	Users can switch between light and dark themes for a personalized experience.
 
 ## Tech Stack
 - React
